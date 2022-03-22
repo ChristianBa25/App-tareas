@@ -44,7 +44,6 @@
 }
 
 .container-options-app{
-  height: 500px;
   grid-column: 1 / 2;
   border-right: 2px dashed var(--border-color);
 }
@@ -57,6 +56,39 @@
 }
 
 .container-templates-app{
-  height: 500px;
+  padding: 10px;
+  grid-column: 2 / 4;
   
+}
+
+
+/* Pantalla 1---------------------------------------------- */
+.container-tasks-added{
+  min-height: 500px;
+
+}
+
+.container-input-add-task{
+  width:100%;
+  text-align: center;
+  margin:auto;
+  font-size: 1.2em;
+}
+
+.container-input-add-task input{
+  width: 80%;
+  font-size: 1.1em;
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  margin: 5px;
+  color: var(--letter-color)
+}
+
+.container-input-add-task input:focus{
+  outline: none;
+  border: 2px solid var(--button-color-hover);
+}
+
+.container-input-add-task button{
+  border-radius: 50%;
 }
