@@ -8,9 +8,11 @@
 
 .container-App{
   width: 100%;
+  height: calc(100vh);
   border: 4px solid var(--border-color);
   color: var(--letter-color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .title-app{
@@ -25,6 +27,7 @@
 .container-options-templates{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  height: 95%;
 }
 
 /*Estilos seccion Opciones--------------------------------------------------*/
@@ -46,6 +49,8 @@
 .container-options-app{
   grid-column: 1 / 2;
   border-right: 2px dashed var(--border-color);
+  
+
 }
 
 .container-options-app button{
@@ -64,8 +69,13 @@
 
 /* Pantalla 1---------------------------------------------- */
 .container-tasks-added{
-  min-height: 500px;
+  height: 500px;
+  margin-bottom: 10px;
+  overflow:auto;
+}
 
+.container-tasks-added::-webkit-scrollbar{
+  background:red
 }
 
 .container-input-add-task{
@@ -87,6 +97,10 @@
 .container-input-add-task input:focus{
   outline: none;
   border: 2px solid var(--button-color-hover);
+}
+
+.container-input-add-task input::placeholder{
+  color: var(--button-color-hover);
 }
 
 .container-input-add-task button{
