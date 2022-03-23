@@ -4,7 +4,7 @@ import ItemTask from './ItemTask'
 
 export default function AddTasks(){
     const [tasks, setTasks] = useState([
-        {id:1, nameTask: "Tarea 1", completed: false},
+
         
     ]);
     const inputTaskRef = useRef();
@@ -30,10 +30,12 @@ export default function AddTasks(){
         <>
         <div className="container-tasks-added">
             <ul>
+
                 {tasks.map((task) =>(
                     <ItemTask key={task.id} task={task}/>
                 ))}
             </ul>
+
         </div>
         <div className="container-input-add-task">
             <input ref={inputTaskRef} type="text" placeholder="Añadir Tarea"  onKeyUp={onKeyUpValue.bind(this)}  />

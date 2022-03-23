@@ -4,30 +4,35 @@
   --background-color: #2D31FA;
   --button-color: #051367;
   --button-color-hover: #5D8BF4;
+  --scroll-selected: #000;
+  --task-background: #4c7ef1aa;
+  --task-hover: #8faffaaa;
 }
 
 .container-App{
   width: 100%;
-  height: calc(100vh);
+  min-height: 100vh;
   border: 4px solid var(--border-color);
   color: var(--letter-color);
   background-color: var(--background-color);
-  overflow: hidden;
+  overflow:hidden;
+  
 }
 
 .title-app{
   text-align: center;
-  border-bottom: 4px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);  
 }
 
 .title-app h1{
   margin: 20px;
+
 }
 
 .container-options-templates{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  height: 95%;
+  min-height: 85vh; 
 }
 
 /*Estilos seccion Opciones--------------------------------------------------*/
@@ -49,8 +54,6 @@
 .container-options-app{
   grid-column: 1 / 2;
   border-right: 2px dashed var(--border-color);
-  
-
 }
 
 .container-options-app button{
@@ -63,26 +66,69 @@
 .container-templates-app{
   padding: 10px;
   grid-column: 2 / 4;
-  
+  display: flex;
+  flex-direction: column;
+  position:relative;
 }
 
 
 /* Pantalla 1---------------------------------------------- */
 .container-tasks-added{
-  height: 500px;
+  height: 70vh;
   margin-bottom: 10px;
   overflow:auto;
+  scrollbar-color: green;
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  outline: 2px solid #DFF6FF;
+  padding: 10px;
 }
 
+/* ESTILOS SCROLL---------------------- */
 .container-tasks-added::-webkit-scrollbar{
-  background:red
+  width: 8px;
+  background-color: var(--button-color-hover);
+  
 }
+
+.container-tasks-added::-webkit-scrollbar-thumb{
+  background-color: var(--button-color);
+  border-radius: 4px;
+}
+
+.container-tasks-added::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-selected);
+  
+}
+
+/*Estilos de cada tarea-------------------------------*/
+
+.li-task{
+  list-style: none;
+  background:var(--task-background);
+  font-size: 1.2em;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.li-task:hover{
+  background:var(--task-hover);
+}
+
+
+
+
+
+
 
 .container-input-add-task{
   width:100%;
   text-align: center;
-  margin:auto;
+  margin: 30px auto;
   font-size: 1.2em;
+  position: absolute;
+  bottom: 0;
 }
 
 .container-input-add-task input{
@@ -90,7 +136,7 @@
   font-size: 1.1em;
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
-  margin: 5px;
+  
   color: var(--letter-color)
 }
 
@@ -105,4 +151,5 @@
 
 .container-input-add-task button{
   border-radius: 50%;
+  margin: 2px;
 }
